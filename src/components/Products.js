@@ -12,7 +12,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 const Product = ({id,title,price,image}) => {
   const dispatch = useDispatch();
   return (<>
-    <Link to={`${id}`}>
+    
     <Card onClick={()=>dispatch(singleProduct(id))}>
     <div className='product-img-box'>
     <div className="products-overlay">
@@ -31,7 +31,7 @@ const Product = ({id,title,price,image}) => {
     />
       </div>
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
+        <Card.Title><Link to={`${id}`}>{title}</Link></Card.Title>
         <Card.Title>&#8377; {price}</Card.Title>
       </Card.Body>
       <Card.Body>
@@ -44,7 +44,6 @@ const Product = ({id,title,price,image}) => {
         </ul>
       </Card.Body>
     </Card>
-    </Link>
     </>
   )
 }

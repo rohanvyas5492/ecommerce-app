@@ -11,7 +11,7 @@ import banner1 from "../assets/img/banner1.jpg";
 import diamond from "../assets/img/diamond.png";
 import tag from "../assets/img/tag.png";
 import Categories from '../components/Categories';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { singleProduct } from '../features/products/productSlice';
 import {  useDispatch, useSelector } from 'react-redux';
 import {HiShoppingCart} from 'react-icons/hi'
@@ -67,7 +67,7 @@ const Home = () => {
       {productItems.slice(0,limit ?limit :productItems.length()).map(products=>{
         const {id,image,title,price}= products
         return(
-          <Link to={`products/${id}`} className='product'>
+          <div className='product'>
     <Card onClick={()=>dispatch(singleProduct(id))}>
     <div className='product-img-box'>
     <div className="products-overlay">
@@ -86,7 +86,7 @@ const Home = () => {
     />
       </div>
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
+        <Card.Title><Link to={`products/${id}`} >{title}</Link></Card.Title>
         <Card.Title>&#8377;{price}</Card.Title>
       </Card.Body>
       <Card.Body>
@@ -99,7 +99,7 @@ const Home = () => {
         </ul>
       </Card.Body>
     </Card>
-    </Link>
+    </div>
         )
       })}
       </Row>

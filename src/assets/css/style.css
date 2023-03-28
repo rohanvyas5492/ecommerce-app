@@ -130,6 +130,12 @@ a:hover{
 }
 .products-overlay>ul>li:hover{
     cursor: pointer;
+    background-color: #c9003d;
+    transition: all .5s;
+}
+.products-overlay>ul>li:hover svg {
+    color: #fff;
+    transition: all .5s;
 }
 .products-overlay>ul>li>svg{
     position: absolute;
@@ -528,7 +534,32 @@ p.price {
  .lazy-load-image-loaded img {
     width: 100%;
 }
-
+.quantity-box {
+    display: flex;
+    align-items: center;
+}
+.amount-btn{
+    border: 0;
+    color: #c9003d;
+    background-color: transparent;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.quantity-box .amount{
+    font-weight: 500;
+    font-size: 2rem;
+    padding: 0 20px;
+    margin: 0;
+}
+.add-to-cart-btn{
+    border: 0;
+        background-color: #c9003d;
+        padding: 10px 20px;
+        color: #fff;
+        text-transform: capitalize;
+        font-weight: 500;
+        margin-top: 25px;
+}
 /*--------------------------------------------------------responsive---------------------------------------------------------*/
 @media(max-width:768px){
     .navbar-container>div {
@@ -619,4 +650,67 @@ li.sidebar-link:not(:first-child):hover{
 .sidebar.is-open{
     transform: translateX(0px);
     transition: all .5s;
+}
+/*---------------------------------------------------------------search-------------------------------------------------------*/
+.search-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7));
+    z-index: 9;
+    display: none;
+}
+.search-box.is-open{
+    display: block;
+}
+.close-btn {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+}
+.close-btn svg{
+    font-size: 2rem;
+    color: #fff;
+}
+.search-form-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 500px;
+}
+input.search-item {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.5rem;
+    background: #fff;
+    border: 0;
+    border-radius: 50px;
+}
+input.search-item:focus{
+    border: 0;
+    outline: 0;
+}
+.form-input{
+    position: relative;
+}
+.search-icon {
+    background: #c9003d;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    padding: 11px;
+}
+.search-icon:hover,
+.close-btn:hover{
+    cursor: pointer;
+}
+.search-icon svg{
+    font-size: 2rem;
+        color: #fff;
 }

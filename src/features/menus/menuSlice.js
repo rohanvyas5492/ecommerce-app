@@ -11,16 +11,25 @@ const menuSlice = createSlice({
     initialState,
     reducers:{
         openSidebar(state){
-            state.isSidebarOpen = !state.isSidebarOpen
+            state.isSidebarOpen = true
         },
         openSearch(state){
-            state.isSearchOpen = !state.isSearchOpen
+            state.isSearchOpen = true
         },
         openUser(state){
-            state.isUserOpen = !state.isUserOpen
+            state.isUserOpen = true
+        },
+        closeSidebar(state){
+            state.isSidebarOpen = false
+        },
+        closeSearch(state){
+            state.isSearchOpen = false
+        },
+        closeUser(state){
+            state.isUserOpen = false
         },
     },
 })
 
-export const {openSidebar,openSearch,openUser} = menuSlice.actions;
+export const {openSidebar,openSearch,openUser,closeSearch,closeSidebar,closeUser} = menuSlice.actions;
 export default menuSlice.reducer
